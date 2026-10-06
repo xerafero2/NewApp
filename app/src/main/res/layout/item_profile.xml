@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#10141D">
+
+    <!-- Header row: badge + name + nav -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="3dp"
+        android:background="#141924">
+
+        <TextView
+            android:id="@+id/badge"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#9FB6DF"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:background="#1A2233" />
+
+        <EditText
+            android:id="@+id/nameEt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Profile name"
+            android:textColor="#E6EAF2"
+            android:textColorHint="#56617A"
+            android:textSize="12sp"
+            android:background="@null"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:inputType="text" />
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_media_previous"
+            android:contentDescription="Back"
+            android:scaleType="centerInside" />
+
+        <ImageButton
+            android:id="@+id/reloadBtn"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_popup_sync"
+            android:contentDescription="Reload"
+            android:scaleType="centerInside" />
+
+        <ImageButton
+            android:id="@+id/uaToggle"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_manage"
+            android:contentDescription="User Agent"
+            android:scaleType="centerInside" />
+    </LinearLayout>
+
+    <!-- URL row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="3dp"
+        android:paddingVertical="2dp"
+        android:background="#0E131C">
+
+        <EditText
+            android:id="@+id/urlEt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Search or enter address"
+            android:textColor="#E6EAF2"
+            android:textColorHint="#56617A"
+            android:textSize="11sp"
+            android:background="#0D1119"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="6dp"
+            android:singleLine="true"
+            android:imeOptions="actionGo"
+            android:inputType="textUri" />
+
+        <ImageButton
+            android:id="@+id/goBtn"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="3dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_media_play"
+            android:contentDescription="Go"
+            android:scaleType="centerInside" />
+    </LinearLayout>
+
+    <!-- UA row (optional, hidden default) -->
+    <LinearLayout
+        android:id="@+id/uaRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="6dp"
+        android:paddingVertical="3dp"
+        android:background="#0B0F16"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UA"
+            android:textColor="#8B95A7"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/uaEt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:hint="Kosongkan = default"
+            android:textColor="#E6EAF2"
+            android:textColorHint="#56617A"
+            android:textSize="10sp"
+            android:background="@null"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <!-- WebView -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <WebView
+            android:id="@+id/web"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_gravity="top"
+            android:max="100"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>
