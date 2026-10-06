@@ -58,5 +58,5 @@ flutter {
 }
 
 dependencies {
-    implementation "org.mozilla.geckoview:geckoview:155.0.20260826090609"
+    implementation "org.mozilla.geckoview:geckoview:139.0.20250603165925"
 }
