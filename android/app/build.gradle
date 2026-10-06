@@ -38,6 +38,13 @@ android {
             useLegacyPackaging = true
         }
     }
+
+    configurations.all {
+        resolutionStrategy {
+            force "androidx.core:core:1.17.0"
+            force "androidx.core:core-ktx:1.17.0"
+        }
+    }
 }
 
 kotlin {
@@ -51,5 +58,5 @@ flutter {
 }
 
 dependencies {
-    implementation "org.mozilla.geckoview:geckoview:156.0.20260921121718"
+    implementation "org.mozilla.geckoview:geckoview:155.0.20260826090609"
 }
