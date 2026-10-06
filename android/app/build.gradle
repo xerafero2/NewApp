@@ -1,6 +1,5 @@
 plugins {
     id "com.android.application"
-    id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
 }
 
@@ -12,10 +11,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
-    }
-
-    kotlinOptions {
-        jvmTarget = "17"
     }
 
     defaultConfig {
@@ -49,5 +44,5 @@ flutter {
 }
 
 dependencies {
-    implementation "org.mozilla.geckoview:geckoview:121.0.20231211142711"
+    implementation "org.mozilla.geckoview:geckoview:156.0.20260921121718"
 }
